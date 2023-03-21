@@ -1,0 +1,27 @@
+
+
+:root[data-theme="light"] {
+    --background:#FEF7EF;
+    --main:#ED9121;
+    $secondary:#878787;
+    $highlight:#FFFFFF;
+    $titleShadow:none;
+    $titleBorder:none;
+};
+:root[data-theme="dark"] {
+    --background: #878787;
+    --main:#ED9121 ;
+    $secondary:#FFFFFF;
+    $highlight:#FFFFFF;
+    $titleShadow:2px 4px 4px 0px rgba(189, 110, 15, 1) inset;
+    $titleBorder:4px solid #FEF7EF;
+};
+
+// :export {
+//     background:$background;
+//     main:$main;
+//     secondary:$secondary;
+//     highlight:$highlight;
+//     titleShadow:$titleShadow;
+//     titleBorder:$titleBorder;
+// }

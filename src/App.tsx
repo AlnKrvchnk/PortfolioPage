@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Toggle from './components/atoms/Toggle/Toggle';
+import { ThemeContext,themes } from './contexts/ThemeContexts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Consumer>
+    {({ theme, setTheme }) => (
+      <Toggle
+        onChange={() => {
+          if (theme === themes.light)setTheme && setTheme(themes.dark)
+          if (theme === themes.dark)setTheme && setTheme(themes.light)
+        }}
+        value={theme === themes.dark}
+      />
+    )}
+  </ThemeContext.Consumer>
   );
 }
 
